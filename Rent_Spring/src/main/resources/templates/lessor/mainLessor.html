@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="services/header :: header"></header>
+<main>
+    <a href="/addLessor" class="btn btn-info">Add Lessor</a>
+    <div class="container even-row-color">
+        <div th:each="item:${lessors}">
+            <p th:text="${item.getFirstname()}"></p>
+            <p th:text="${item.getLastname()}"></p>
+            <a th:href="'/lessorById/'+${item.getId()}" class="btn btn-success">DETAILS . . . </a><hr>
+        </div>
+    </div>
+</main>
+
+<footer th:insert="services/footer :: footer"></footer>
+</body>
+</html>

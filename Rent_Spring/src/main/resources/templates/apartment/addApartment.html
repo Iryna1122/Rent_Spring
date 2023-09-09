@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="services/header :: header"></header>
+<main>
+    <div class="container mt-10">
+        <h1>Add Apartment</h1>
+
+        <form method="post" action="/addApartment">
+            <input type="text" name="address" class="form-control col-md-7" placeholder="Address"><br>
+            <input type="number" name="number" class="form-control col-md-7" placeholder="Number"><br>
+            <br>
+            <input type="submit"  value="CREATE" class="col-md-7">
+        </form>
+
+    </div>
+</main>
+
+<footer th:insert="services/footer :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="services/header :: header"></header>
+<main>
+
+    <div>
+        <h1>Форма Оренди Квартири</h1>
+        <form action="/saveApartmentRental" method="post">
+            <div>
+                <label >ID Клієнта:</label>
+                <select th:field="*{client.id}">
+                    <option th:each="client : ${clients}" th:value="${client.id}" th:text="${client.name}"></option>
+                </select>
+            </div>
+            <div>
+                <label>ID Квартири:</label>
+                <select th:field="*{apartment.id}">
+                    <option th:each="apartment : ${apartments}" th:value="${apartment.id}"
+                            th:text="${apartment.address}"></option>
+                </select>
+            </div>
+            <div>
+                <label >Дата Оренди:</label>
+                <input type="date" name="rentalDate"/>
+            </div>
+            <div>
+                <button type="submit">Зберегти</button>
+            </div>
+        </form>
+    </div>
+
+</main>
+<footer th:insert="services/footer :: footer"></footer>
+</body>
+</html>

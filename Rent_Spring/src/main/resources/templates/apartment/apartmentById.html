@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Lessor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="services/header :: header"></header>
+<main>
+    <center><div>
+        <h2>Detail</h2>
+        <p th:text="${apartment.getAddress()}"></p>
+        <p th:text="${apartment.getNumberOfRooms()}"></p>
+        <a th:href="'/editApartment/'+${apartment.getId()}" class="btn btn-success">EDIT</a>
+        <a th:href="'/apartmentDelete/'+${apartment.getId()}" class="btn btn-info">REMOVE</a>
+    </div>
+    </center>
+</main>
+
+<footer th:insert="services/footer :: footer"></footer>
+</body>
+</html>

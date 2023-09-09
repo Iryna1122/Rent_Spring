@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="services/header :: header"></header>
+<main>
+    <div class="container mt-10">
+        <h1>Add Client</h1>
+
+        <form method="post" action="/addClient">
+            <input type="text" name="name" class="form-control col-md-7" placeholder="Name"><br>
+            <input type="text" name="lastname" class="form-control col-md-7" placeholder="Lastname"><br>
+            <br>
+            <input type="submit"  value="CREATE Client" class="col-md-7">
+        </form>
+
+    </div>
+</main>
+
+<footer th:insert="services/footer :: footer"></footer>
+</body>
+</html>

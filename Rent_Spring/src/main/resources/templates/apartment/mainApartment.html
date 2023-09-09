@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="services/header :: header"></header>
+<main>
+    <a href="/addApartment" class="btn btn-info">Add Apartment</a>
+    <div class="container even-row-color">
+        <div th:each="item:${apartments}">
+            <p th:text="${item.getAddress()}"></p>
+            <p th:text="${item.getNumberOfRooms()}"></p>
+            <a th:href="'/apartmentById/'+${item.getId()}" class="btn btn-success">DETAILS . . . </a><hr>
+        </div>
+    </div>
+</main>
+
+<footer th:insert="services/footer :: footer"></footer>
+</body>
+</html>
